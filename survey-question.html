@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .survey-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 40px 100px;
+            font-size: 28px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .yes-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .yes-button:hover {
+            background-color: #218838;
+        }
+        .no-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .no-button:hover {
+            background-color: #c82333;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 32px;
+            color: #dc3545;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+              <div class="button-container">
+            <button class="yes-button" onclick="goToNextStep()">Yes</button>
+            <button class="no-button" onclick="disqualifyLead()">No</button>
+        </div>
+        <div id="disqualify-message" class="message">
+            Thank you for your time, but you do not qualify for the next step.
+        </div>
+    </div>
+
+    <script>
+        function goToNextStep() {
+            // Redirect to the next step in the survey
+            window.location.href = "https://api.leadconnectorhq.com/widget/survey/Vd7U9UQPelZ4zJcNOIoV?notrack=true"; // Replace with your next step URL
+        }
+
+        function disqualifyLead() {
+            // Show disqualification message
+            document.getElementById("disqualify-message").style.display = "block";
+        }
+    </script>
+</body>
+</html>
